@@ -11,7 +11,7 @@ from django.db.models import Q
 
 
 def index(request):
-	return HttpResponse("<h1>Welcome to the XYZ Library</h1>")
+	return HttpResponse("<h1>Welcome to the Django Library</h1>")
 
 
 @csrf_exempt
