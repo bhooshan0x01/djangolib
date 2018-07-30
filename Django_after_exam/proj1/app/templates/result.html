@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+<h1>User Profile</h1>
+<table>
+	<tr>
+		<th>BookName</th>
+		<th>Author</th>
+	</tr>
+	{% for i in search_by %}
+	<tr>
+		<td>{{i.bookname}}</td>
+		<td>{{i.author}}</td>
+	</tr>
+	{% endfor %}
+</table>
+</body>
+</html>

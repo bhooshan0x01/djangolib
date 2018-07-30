@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;    
+}
+</style>
+</head>
+<body>
+<h1>Student Dashboard</h1>
+<form action="/result/" method="post">
+	Search: <input type="text" name="search_name">
+	<input type="Submit" value="Search">
+</form>
+<a href="/profile">View Profile</a>
+<table style="width:100%">
+  <tr>
+  	<th>Id</th>
+    <th>Bookame</th>
+    <th>Author</th>
+    <th>Subject</th>
+    <th>Copies</th>
+  </tr>
+  {% for i in book %}
+  <tr>
+  	<td><a href="/details/?b_id={{i.id}}">{{i.id}}</a></td>
+	<td>{{i.bookname}}</td>
+    <td>{{i.author}}</td>
+    <td>{{i.subject}}</td>
+    <td>{{i.copies}}  <button type="button" onclick="BookIssue" href="/BookIssue"">I Want This</button></td>
+  </tr>
+  {% endfor %}
+</table>
+<form action="/LogOut/" method="post">
+ 	<a href="/LogOut">LogOut</a>
+</body>
+</html>
